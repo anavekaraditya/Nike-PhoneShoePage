@@ -44,6 +44,7 @@ export default function Gallery() {
             <Image
               src={photo.src}
               alt={photo.alt}
+              data-testid={i === 0 ? "main-photo" : undefined}
               fill
               sizes="(max-width: 430px) 100vw, 430px"
               priority={i === 0}

@@ -99,6 +99,7 @@ export default function PurchasePanel({ sizes }: { sizes: SizeOption[] }) {
       <div
         ref={gridRef}
         role="radiogroup"
+        data-testid="size-grid"
         aria-label="Select size"
         onAnimationEnd={() => setShaking(false)}
         className={`grid grid-cols-2 gap-2 px-4 ${
@@ -113,6 +114,7 @@ export default function PurchasePanel({ sizes }: { sizes: SizeOption[] }) {
               key={size.sku}
               type="button"
               role="radio"
+              data-testid={soldOut ? "size-button-sold-out" : "size-button"}
               aria-checked={isSelected}
               aria-disabled={soldOut || undefined}
               aria-label={ariaLabel(size)}

@@ -8,7 +8,9 @@ export default function ProductInfo({ product }: { product: Product }) {
       <h1 className="mt-0.5 text-2xl font-semibold leading-tight">
         {product.name}
       </h1>
-      <p className="mt-1 text-lg font-medium">{product.priceFormatted}</p>
+      <p data-testid="price" className="mt-1 text-lg font-medium">
+        {product.priceFormatted}
+      </p>
       <p className="text-sm text-neutral-600">{product.colorway}</p>
     </section>
   );
