@@ -48,7 +48,12 @@ const recorder = () => {
   });
 };
 
-const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ["--no-first-run"] });
+// CI runners (GitHub Actions) need the sandbox off for headless Chrome.
+const browser = await puppeteer.launch({
+  executablePath: CHROME,
+  headless: true,
+  args: process.env.CI ? ["--no-first-run", "--no-sandbox"] : ["--no-first-run"],
+});
 const results = [];
 for (let i = 1; i <= Number(runs); i++) {
   const ctx = await browser.createBrowserContext();

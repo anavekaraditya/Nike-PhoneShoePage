@@ -137,3 +137,47 @@ Lighthouse on the live page: first paint 0.8 s, largest paint 2.1 s, total
 blocking time 70 to 80 ms, layout shift 0. The full report is
 `traces/2026-11-20-slow4g/live-vercel.lighthouse.html`; the check output is
 `traces/2026-11-20-slow4g/live-check.txt`.
+
+## Automatic speed check on every push (20 November 2026)
+
+### Request
+
+A review suggestion, pasted as a screenshot:
+
+```
+Make check-live.mjs and the Lighthouse run happen on their own every time you push, so a change that moves the size grid gets caught before it goes live.
+```
+
+Its solution: a GitHub Actions workflow that runs Lighthouse with
+`simulate.config.cjs` and `check-live.mjs`, and fails on any FAIL.
+
+### What was added
+
+- `.github/workflows/phone-speed-check.yml` runs on every push to `main`, every
+  pull request, and by hand from the Actions tab.
+- `scripts/check-lighthouse.mjs` reads a Lighthouse report and prints PASS or
+  FAIL for `performance_score_min`. It also fails if the report was not run with
+  the profile settings (mobile, Slow 4G, 4x CPU, 375 x 812 at 3x).
+- `scripts/check-live.mjs` now turns off Chrome's sandbox when `CI` is set,
+  which GitHub's runners need.
+
+The job builds the commit, serves it on the runner, runs Lighthouse 13.6.0 with
+`traces/2026-11-20-slow4g/simulate.config.cjs`, then runs
+`node scripts/check-live.mjs` for 3 runs. Any FAIL makes the run fail, and the
+Lighthouse HTML report is kept as a run artifact.
+
+It checks the commit it builds, not a Vercel preview, because this repo is not
+connected to Vercel's Git integration (it was deployed with the CLI), so there
+is no preview to wait for and no secrets are needed. To check a deployed address
+instead, run the workflow by hand from the Actions tab and fill in `url`.
+
+### Try it locally
+
+```bash
+npm run build && npx next start -p 3000
+node scripts/check-live.mjs http://localhost:3000 3
+```
+
+Tested against a page whose grid moves after first paint: it reported FAIL with
+300 px of grid movement. A Lighthouse report with a score below 90, or one run
+without the 4x CPU slowdown, also reports FAIL.
