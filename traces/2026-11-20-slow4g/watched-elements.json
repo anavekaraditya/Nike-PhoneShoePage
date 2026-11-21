@@ -1,0 +1,653 @@
+{
+  "url": "http://localhost:3200",
+  "settings": {
+    "NET": {
+      "offline": false,
+      "latency": 562.5,
+      "downloadThroughput": 188743.68,
+      "uploadThroughput": 86400
+    },
+    "CPU": 4,
+    "SCREEN": {
+      "width": 375,
+      "height": 812,
+      "deviceScaleFactor": 3,
+      "mobile": true
+    }
+  },
+  "results": [
+    {
+      "samples": [
+        {
+          "t": 634.2,
+          "grid": null,
+          "photo": null,
+          "photoLoaded": false,
+          "price": null,
+          "priceText": null,
+          "priceFont": null,
+          "fontsStatus": "loaded",
+          "btnCount": 0,
+          "btnMin": null,
+          "soldCount": 0,
+          "soldMin": null
+        },
+        {
+          "t": 699.3,
+          "grid": {
+            "top": 307.7,
+            "h": 273,
+            "w": 359
+          },
+          "photo": {
+            "top": 0,
+            "h": 812,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 187.9,
+            "h": 18,
+            "w": 359
+          },
+          "priceText": "$140.00",
+          "priceFont": "Times",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 21,
+          "soldCount": 4,
+          "soldMin": 21
+        },
+        {
+          "t": 1385.2,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loading",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 1797.9,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 2298.9,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": true,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        }
+      ],
+      "shifts": [],
+      "lcp": [
+        {
+          "t": 1492,
+          "el": "H1",
+          "size": 5921,
+          "url": null
+        },
+        {
+          "t": 2304,
+          "el": "IMG alt=\"Nike Pegasus 43 in black and white, side view\"",
+          "size": 175781,
+          "url": "http://localhost:3200/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75"
+        }
+      ],
+      "fonts": [
+        {
+          "t": 1787.4,
+          "loaded": [
+            "Geist Fallback normal",
+            "Geist 100 900"
+          ]
+        }
+      ],
+      "img": null,
+      "events": {
+        "domContentLoaded": 1390.4,
+        "first-paint": 1492,
+        "first-contentful-paint": 1492,
+        "load": 2586.6
+      },
+      "wallMs": 5223,
+      "resources": [
+        {
+          "url": "/",
+          "type": "Document",
+          "kb": 6.6
+        },
+        {
+          "url": "/_next/static/chunks/2oj5egnee9o6u.css",
+          "type": "Stylesheet",
+          "kb": 5
+        },
+        {
+          "url": "/_next/static/chunks/0kqziy-7_gy73.js",
+          "type": "Script",
+          "kb": 7.6
+        },
+        {
+          "url": "/_next/static/media/605ce01b664af129-s.p.0wgildi0cnwt9.woff2",
+          "type": "Font",
+          "kb": 28.9
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "type": "Script",
+          "kb": 4.2
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "Script",
+          "kb": 3.9
+        },
+        {
+          "url": "/_next/static/chunks/1vm8h4gwdyqr8.js",
+          "type": "Script",
+          "kb": 47.9
+        },
+        {
+          "url": "/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75",
+          "type": "Image",
+          "kb": 55.1
+        },
+        {
+          "url": "/_next/static/chunks/14xqlzhcei_21.js",
+          "type": "Script",
+          "kb": 8.4
+        },
+        {
+          "url": "/_next/static/chunks/3iz8_hoapa1o_.js",
+          "type": "Script",
+          "kb": 70.5
+        },
+        {
+          "url": "/favicon.ico?favicon.117ezoe8m31dk.ico",
+          "type": "Other",
+          "kb": 2.9
+        }
+      ]
+    },
+    {
+      "samples": [
+        {
+          "t": 594.2,
+          "grid": null,
+          "photo": null,
+          "photoLoaded": false,
+          "price": null,
+          "priceText": null,
+          "priceFont": null,
+          "fontsStatus": "loaded",
+          "btnCount": 0,
+          "btnMin": null,
+          "soldCount": 0,
+          "soldMin": null
+        },
+        {
+          "t": 629.5,
+          "grid": {
+            "top": 307.7,
+            "h": 273,
+            "w": 359
+          },
+          "photo": {
+            "top": 0,
+            "h": 812,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 187.9,
+            "h": 18,
+            "w": 359
+          },
+          "priceText": "$140.00",
+          "priceFont": "Times",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 21,
+          "soldCount": 4,
+          "soldMin": 21
+        },
+        {
+          "t": 1337,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loading",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 1807.4,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 2288.4,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": true,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        }
+      ],
+      "shifts": [],
+      "lcp": [
+        {
+          "t": 1440,
+          "el": "H1",
+          "size": 5921,
+          "url": null
+        },
+        {
+          "t": 2296,
+          "el": "IMG alt=\"Nike Pegasus 43 in black and white, side view\"",
+          "size": 175781,
+          "url": "http://localhost:3200/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75"
+        }
+      ],
+      "fonts": [
+        {
+          "t": 1806.7,
+          "loaded": [
+            "Geist Fallback normal",
+            "Geist 100 900"
+          ]
+        }
+      ],
+      "img": null,
+      "events": {
+        "domContentLoaded": 1341.4,
+        "first-paint": 1440,
+        "first-contentful-paint": 1440,
+        "load": 2510.8
+      },
+      "wallMs": 5126,
+      "resources": [
+        {
+          "url": "/",
+          "type": "Document",
+          "kb": 6.6
+        },
+        {
+          "url": "/_next/static/chunks/2oj5egnee9o6u.css",
+          "type": "Stylesheet",
+          "kb": 5
+        },
+        {
+          "url": "/_next/static/chunks/0kqziy-7_gy73.js",
+          "type": "Script",
+          "kb": 7.6
+        },
+        {
+          "url": "/_next/static/media/605ce01b664af129-s.p.0wgildi0cnwt9.woff2",
+          "type": "Font",
+          "kb": 28.9
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "type": "Script",
+          "kb": 4.2
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "Script",
+          "kb": 3.9
+        },
+        {
+          "url": "/_next/static/chunks/1vm8h4gwdyqr8.js",
+          "type": "Script",
+          "kb": 47.9
+        },
+        {
+          "url": "/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75",
+          "type": "Image",
+          "kb": 55.1
+        },
+        {
+          "url": "/_next/static/chunks/3iz8_hoapa1o_.js",
+          "type": "Script",
+          "kb": 70.5
+        },
+        {
+          "url": "/_next/static/chunks/14xqlzhcei_21.js",
+          "type": "Script",
+          "kb": 8.4
+        },
+        {
+          "url": "/favicon.ico?favicon.117ezoe8m31dk.ico",
+          "type": "Other",
+          "kb": 2.9
+        }
+      ]
+    },
+    {
+      "samples": [
+        {
+          "t": 596,
+          "grid": null,
+          "photo": null,
+          "photoLoaded": false,
+          "price": null,
+          "priceText": null,
+          "priceFont": null,
+          "fontsStatus": "loaded",
+          "btnCount": 0,
+          "btnMin": null,
+          "soldCount": 0,
+          "soldMin": null
+        },
+        {
+          "t": 633.1,
+          "grid": {
+            "top": 307.7,
+            "h": 273,
+            "w": 359
+          },
+          "photo": {
+            "top": 0,
+            "h": 812,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 187.9,
+            "h": 18,
+            "w": 359
+          },
+          "priceText": "$140.00",
+          "priceFont": "Times",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 21,
+          "soldCount": 4,
+          "soldMin": 21
+        },
+        {
+          "t": 1316.7,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loading",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 1828,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": false,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        },
+        {
+          "t": 2308,
+          "grid": {
+            "top": 724.8,
+            "h": 720,
+            "w": 375
+          },
+          "photo": {
+            "top": 192,
+            "h": 468.8,
+            "w": 375
+          },
+          "photoLoaded": true,
+          "price": {
+            "top": 128,
+            "h": 28,
+            "w": 343
+          },
+          "priceText": "$140.00",
+          "priceFont": "Geist",
+          "fontsStatus": "loaded",
+          "btnCount": 22,
+          "btnMin": 48,
+          "soldCount": 4,
+          "soldMin": 48
+        }
+      ],
+      "shifts": [],
+      "lcp": [
+        {
+          "t": 1424,
+          "el": "H1",
+          "size": 5921,
+          "url": null
+        },
+        {
+          "t": 2312,
+          "el": "IMG alt=\"Nike Pegasus 43 in black and white, side view\"",
+          "size": 175781,
+          "url": "http://localhost:3200/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75"
+        }
+      ],
+      "fonts": [
+        {
+          "t": 1827.5,
+          "loaded": [
+            "Geist Fallback normal",
+            "Geist 100 900"
+          ]
+        }
+      ],
+      "img": null,
+      "events": {
+        "domContentLoaded": 1321.6,
+        "first-paint": 1424,
+        "first-contentful-paint": 1424,
+        "load": 2494.5
+      },
+      "wallMs": 5113,
+      "resources": [
+        {
+          "url": "/",
+          "type": "Document",
+          "kb": 6.6
+        },
+        {
+          "url": "/_next/static/chunks/2oj5egnee9o6u.css",
+          "type": "Stylesheet",
+          "kb": 5
+        },
+        {
+          "url": "/_next/static/chunks/0kqziy-7_gy73.js",
+          "type": "Script",
+          "kb": 7.6
+        },
+        {
+          "url": "/_next/static/media/605ce01b664af129-s.p.0wgildi0cnwt9.woff2",
+          "type": "Font",
+          "kb": 28.9
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "type": "Script",
+          "kb": 4.2
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "Script",
+          "kb": 3.9
+        },
+        {
+          "url": "/_next/static/chunks/1vm8h4gwdyqr8.js",
+          "type": "Script",
+          "kb": 47.9
+        },
+        {
+          "url": "/_next/image?url=%2Fimages%2Fpegasus-43-1.webp&w=1200&q=75",
+          "type": "Image",
+          "kb": 55.1
+        },
+        {
+          "url": "/_next/static/chunks/3iz8_hoapa1o_.js",
+          "type": "Script",
+          "kb": 70.5
+        },
+        {
+          "url": "/_next/static/chunks/14xqlzhcei_21.js",
+          "type": "Script",
+          "kb": 8.4
+        },
+        {
+          "url": "/favicon.ico?favicon.117ezoe8m31dk.ico",
+          "type": "Other",
+          "kb": 2.9
+        }
+      ]
+    }
+  ]
+}
