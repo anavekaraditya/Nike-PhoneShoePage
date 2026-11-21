@@ -53,15 +53,18 @@ jobs:
           done
           echo "Server did not start"; cat next-start.log; exit 1
 
-      - name: Lighthouse, mobile, Slow 4G, 4x CPU
+      - name: Lighthouse, mobile, Slow 4G, 4x CPU (median of 3 runs)
         run: |
-          npx --yes lighthouse@13.6.0 "$TARGET_URL" \
-            --config-path=traces/2026-11-20-slow4g/simulate.config.cjs \
-            --chrome-flags="--headless=new --no-sandbox" \
-            --output=json --output=html --output-path=./lighthouse --quiet
-          node scripts/check-lighthouse.mjs lighthouse.report.json
+          for i in 1 2 3; do
+            npx --yes lighthouse@13.6.0 "$TARGET_URL" \
+              --config-path=traces/2026-11-20-slow4g/simulate.config.cjs \
+              --chrome-flags="--headless=new --no-sandbox" \
+              --output=json --output=html --output-path=./lighthouse-$i --quiet
+          done
+          node scripts/check-lighthouse.mjs lighthouse-1.report.json lighthouse-2.report.json lighthouse-3.report.json
 
       - name: Size grid shift and size button size
+        if: ${{ !cancelled() }}
         run: node scripts/check-live.mjs "$TARGET_URL" 3
 
       - name: Keep the Lighthouse report
@@ -69,5 +72,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
-          path: lighthouse.report.html
+          path: |
+            lighthouse-*.report.html
+            lighthouse-*.report.json
           if-no-files-found: ignore
