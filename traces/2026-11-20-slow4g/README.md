@@ -48,3 +48,26 @@ move the grid.
 | `simulate.config.cjs`, `devtools.config.cjs` | Lighthouse configs with the profile's settings |
 | `watched-elements.json` | Per-frame positions of each watched element, 3 runs |
 | `record-watched-elements.mjs` | Script that produced `watched-elements.json` (needs `puppeteer-core`) |
+
+## Live Vercel page (https://nike-pegasus-phone-page-one.vercel.app)
+
+Measured after the `data-testid` attributes were added, with the 8 December stock
+file, under the same phone, Slow 4G and 4x CPU settings.
+
+| `speed-budget.json` key | Required | Live result | Result |
+| --- | --- | --- | --- |
+| `performance_score_min` | >= 90 | 99, 99, 99 (Lighthouse, 3 runs) | Pass |
+| `size_grid_shift_px_max` | 0 px | 0 px in 3 runs, layout shift score 0 | Pass |
+| `size_button_min_px` | >= 44 px | 48 px: 17 `size-button`, 9 `size-button-sold-out` | Pass |
+
+All five watched `data-testid` elements are found on the live page. Lighthouse:
+first paint 0.8 s, largest paint 2.1 s, total blocking time 70 to 80 ms.
+
+| File | What it is |
+| --- | --- |
+| `live-vercel.lighthouse.html` | Lighthouse report for the live page |
+| `live-check.txt` | Output of `scripts/check-live.mjs` (3 runs, per-frame grid positions) |
+
+The earlier `record-watched-elements.mjs` finds elements by markup because the
+page had no `data-testid` attributes then. `scripts/check-live.mjs` replaces it
+and reads the `data-testid` names directly.

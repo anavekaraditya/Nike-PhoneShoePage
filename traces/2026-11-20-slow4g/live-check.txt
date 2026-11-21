@@ -1,0 +1,94 @@
+URL: https://nike-pegasus-phone-page-one.vercel.app  (3 runs, 375x812 @3x, Slow 4G, 4x CPU)
+size_grid_shift_px_max  <= 0: PASS  (measured 0 px, layout-shift score 0)
+size_button_min_px      >= 44: PASS  (smallest side 48 px across 17 size-button + 9 size-button-sold-out)
+watched elements found: PASS  {"size-grid":1,"size-button":17,"size-button-sold-out":9,"main-photo":1,"price":1}
+performance_score_min   >= 90: measured separately with Lighthouse
+{
+  "url": "https://nike-pegasus-phone-page-one.vercel.app",
+  "runs": [
+    {
+      "found": {
+        "size-grid": 1,
+        "size-button": 17,
+        "size-button-sold-out": 9,
+        "main-photo": 1,
+        "price": 1
+      },
+      "firstPaintMs": 1564,
+      "gridTopsBeforeFirstPaint": [
+        307.7
+      ],
+      "gridTops": [
+        724.8
+      ],
+      "gridMovementPx": 0,
+      "layoutShiftScore": 0,
+      "button": {
+        "count": 17,
+        "min": 48
+      },
+      "soldOut": {
+        "count": 9,
+        "min": 48
+      },
+      "vw": 375,
+      "dpr": 3
+    },
+    {
+      "found": {
+        "size-grid": 1,
+        "size-button": 17,
+        "size-button-sold-out": 9,
+        "main-photo": 1,
+        "price": 1
+      },
+      "firstPaintMs": 1556,
+      "gridTopsBeforeFirstPaint": [
+        307.7
+      ],
+      "gridTops": [
+        724.8
+      ],
+      "gridMovementPx": 0,
+      "layoutShiftScore": 0,
+      "button": {
+        "count": 17,
+        "min": 48
+      },
+      "soldOut": {
+        "count": 9,
+        "min": 48
+      },
+      "vw": 375,
+      "dpr": 3
+    },
+    {
+      "found": {
+        "size-grid": 1,
+        "size-button": 17,
+        "size-button-sold-out": 9,
+        "main-photo": 1,
+        "price": 1
+      },
+      "firstPaintMs": 1564,
+      "gridTopsBeforeFirstPaint": [
+        307.7
+      ],
+      "gridTops": [
+        724.8
+      ],
+      "gridMovementPx": 0,
+      "layoutShiftScore": 0,
+      "button": {
+        "count": 17,
+        "min": 48
+      },
+      "soldOut": {
+        "count": 9,
+        "min": 48
+      },
+      "vw": 375,
+      "dpr": 3
+    }
+  ]
+}

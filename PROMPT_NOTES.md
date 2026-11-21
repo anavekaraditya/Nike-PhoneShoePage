@@ -50,10 +50,90 @@ Return the watched_elements data, like the how far each element moves the grid a
 From `Web Platform Slow 4G Mobile Check Profile.yaml`: 375 x 812 CSS px at 3x with
 mobile on, Slow 4G (150 ms round trip, 1638.4 Kbps; DevTools side 562.5 ms
 request latency, 1474.56 Kbps down, 675 Kbps up) and a 4x CPU slowdown.
-Measured on a production build (`npm run build && npm start`), not the live
-Vercel page.
+This section's numbers were measured on a local production build
+(`npm run build && npm start`). The live Vercel page is measured in the next
+section.
 
 ### Where the results are
 
 `traces/2026-11-20-slow4g/README.md` summarises the results. The raw files are
 in the same folder.
+
+## Vercel launch and live Lighthouse (20 November 2026)
+
+### Prompts
+
+```
+Can you deploy this app on vercel and run a mobile Lighthouse on it. Provide me with the live link.
+```
+
+Follow-ups, in order:
+
+```
+Use the new stock file for the app
+```
+
+```
+Add this screenshot to the repo and add the Live URL on the readme's first line.
+```
+
+```
+Push the code
+```
+
+"The new stock file" is `Pegasus Size and Stock Snapshot, 8 December 2026.json`,
+now copied to `data/pegasus-43-sizes.json` (9 sold out, 7 low stock, 10 in stock).
+
+### Repeat the deploy
+
+Needs the Vercel CLI, logged in (`vercel whoami`). The project name must be
+lowercase, so the folder name `Nike-PhoneShoePage` cannot be used as the name.
+
+```bash
+vercel link --yes --project nike-pegasus-phone-page
+vercel deploy --prod --yes
+```
+
+The production address is https://nike-pegasus-phone-page-one.vercel.app
+
+### Repeat the mobile Lighthouse run
+
+Uses the profile's settings from `traces/2026-11-20-slow4g/simulate.config.cjs`
+(375 x 812 at 3x, mobile, Slow 4G simulated, 4x CPU). Set `CHROME_PATH` to a
+Chrome binary first; Lighthouse reads the path from that variable.
+
+```bash
+export CHROME_PATH="/path/to/Google Chrome"
+npx -y lighthouse https://nike-pegasus-phone-page-one.vercel.app/ \
+  --config-path=traces/2026-11-20-slow4g/simulate.config.cjs \
+  --chrome-flags="--headless=new" --output=html --output=json \
+  --output-path=./live --quiet
+```
+
+### Repeat the pass or fail check
+
+`scripts/check-live.mjs` loads the page under the same phone, Slow 4G and 4x CPU
+settings, finds the five `data-testid` elements, and prints PASS or FAIL for
+`size_grid_shift_px_max` and `size_button_min_px` from `speed-budget.json`.
+
+```bash
+npm install
+node scripts/check-live.mjs https://nike-pegasus-phone-page-one.vercel.app 3
+```
+
+Grid movement is counted from first paint, as the profile says. Before first
+paint the page is unstyled and the grid sits at 307.7 px; that reading is
+reported separately and not counted.
+
+### Live results
+
+| Budget key | Required | Live result | Result |
+| --- | --- | --- | --- |
+| `performance_score_min` | >= 90 | 99, 99, 99 (Lighthouse, 3 runs) | Pass |
+| `size_grid_shift_px_max` | 0 px | 0 px in 3 runs; layout shift score 0 | Pass |
+| `size_button_min_px` | >= 44 px | 48 px (17 size-button, 9 size-button-sold-out) | Pass |
+
+Lighthouse on the live page: first paint 0.8 s, largest paint 2.1 s, total
+blocking time 70 to 80 ms, layout shift 0. The full report is
+`traces/2026-11-20-slow4g/live-vercel.lighthouse.html`; the check output is
+`traces/2026-11-20-slow4g/live-check.txt`.
