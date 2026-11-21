@@ -161,9 +161,17 @@ Its solution: a GitHub Actions workflow that runs Lighthouse with
 - `scripts/check-live.mjs` now turns off Chrome's sandbox when `CI` is set,
   which GitHub's runners need.
 
-The job builds the commit, serves it on the runner, runs Lighthouse 13.6.0 with
-`traces/2026-11-20-slow4g/simulate.config.cjs`, then runs
-`node scripts/check-live.mjs` for 3 runs. Any FAIL makes the run fail, and the
+The job builds the commit, serves it on the runner, runs Lighthouse 13.6.0 three
+times with `traces/2026-11-20-slow4g/simulate.config.cjs` and checks the median
+score, then runs `node scripts/check-live.mjs` for 3 runs.
+
+Why the median: the first CI run on a slow runner scored 86 (blocking time
+410 ms) while the same page scores 97 to 99 on a laptop. In the next run the
+three Lighthouse scores were 87, 100 and 98; the 87 came from a slower machine
+(Lighthouse's machine benchmark index 2530 against about 3000 for the others).
+The median of 3 was 98, so the run passed. The profile values (4x CPU, Slow 4G)
+are unchanged. If two of three runs land on slow machines the check can still
+fail by chance; re-run the workflow before treating that as a real slowdown. Any FAIL makes the run fail, and the
 Lighthouse HTML report is kept as a run artifact.
 
 It checks the commit it builds, not a Vercel preview, because this repo is not
