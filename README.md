@@ -1,3 +1,7 @@
+Live URL: https://nike-pegasus-phone-page-one.vercel.app
+
+![Nike Pegasus 43 page on a phone](docs/mobile-screenshot.webp)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
